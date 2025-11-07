@@ -24,3 +24,10 @@ It allows querying multiple variants at once and retrieves key genomic informati
 ## 🧠 Usage
 ```bash
 ./gnomad_query.sh --vl variants.txt --data-type <exome|genome|joint>
+
+
+
+## Example
+```bash
+./gnomad_query.sh --vl my_variants.txt --data-type exome
+
