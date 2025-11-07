@@ -26,8 +26,30 @@ It allows querying multiple variants at once and retrieves key genomic informati
 ./gnomad_query.sh --vl variants.txt --data-type <exome|genome|joint>
 
 
-
-## Example
-```bash
+🔹 Example
 ./gnomad_query.sh --vl my_variants.txt --data-type exome
 
+
+⚙️ Options
+Option	Description
+--vl	Variant list file (one variant per line)
+--data-type	Dataset type: exome, genome, or joint
+--help	Show help message
+
+
+
+📄 Input Example
+1-55516888-G-A
+2-1234567-T-C
+10-8965432-C-T
+
+📁 Output
+
+All queried variants are saved in:
+
+varStore/<variant_id>.json
+
+
+Example:
+
+varStore/1-55516888-G-A.json
