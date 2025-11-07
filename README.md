@@ -68,8 +68,3 @@ chmod +x gnomad_query.sh
 
 
 
-🧠 Usage
-
-Run the script with the following syntax:
-
-./gnomad_query.sh --vl <variant_list.txt> --data-type <exome|genome|joint>
