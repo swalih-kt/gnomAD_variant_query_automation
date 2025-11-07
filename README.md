@@ -1,29 +1,34 @@
-# 🧬 gnomAD Variant Query Automation
+# 🧬 gnomAD Variant Query & Processing Toolkit
 
-A lightweight **Bash script** to automatically fetch variant-level data from the **gnomAD GraphQL API**.  
-It allows querying multiple variants at once and retrieves key genomic information such as allele frequency, counts, and population statistics.
+A lightweight toolkit of **Bash scripts** to automate querying and processing of variant-level data from the **gnomAD GraphQL API**.  
+It fetches variant details, converts JSON results into tabular format, and merges them into a single master file — ready for downstream analysis.
 
 ---
 
-## 🚀 Features
-- Supports **exome**, **genome**, and **joint** datasets  
-- Queries **multiple variants** in one go  
-- Fetches AC, AN, AF, population data, and transcript annotations  
-- Saves results as individual **JSON** files in `varStore/`  
-- Simple command-line interface  
+## 📂 Scripts Overview
+
+| Script | Purpose |
+|:--------|:---------|
+| `varID_query_gnomAD.sh` | Queries the gnomAD API for a list of variants and saves data as JSON files. |
+| `varID_joint_flatten_gnomad.sh` | Converts gnomAD JSON outputs into tab-separated `.tsv` files. |
+| `run_all_json_to_tsv.sh` | Batch-processes all JSON files in a folder and converts them to TSVs automatically. |
+| `merge.sh` | Merges all TSV files into a single combined table for analysis. |
 
 ---
 
 ## ⚙️ Requirements
 - `bash` (v4.0+)  
 - `curl`  
+- `jq`  
 - Internet connection  
 
 ---
 
-## 🧠 Usage
+## 🚀 Workflow
+
+### **Step 1 — Query Variants from gnomAD**
 ```bash
-./gnomad_query.sh --vl variants.txt --data-type <exome|genome|joint>
+./varID_query_gnomAD.sh --vl variants.txt --data-type <exome|genome|joint>
 
 
 🔹 Example
